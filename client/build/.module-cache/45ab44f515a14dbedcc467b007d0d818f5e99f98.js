@@ -1,0 +1,35 @@
+// React
+var React = require("react");
+//var Buttons = require("./Button")
+
+// Router
+//var Router = require("react-router");
+console.log("a");
+
+// Component
+var Home = React.createClass({
+  displayName: "Home",
+  propTypes: {},
+  mixins: [],
+
+  getInitialState: function () { return null; },
+
+  componentWillMount: function () {},
+
+  componentWillUnmount: function () {},
+
+  render: function () {
+    return (
+      React.createElement("div", null, 
+        React.createElement("p", null, 
+          "home render"
+        )
+
+      )
+    );
+  }
+});
+
+React.renderComponent(React.createElement(Home, null), document.getElementById('content'));
+
+//module.exports = Home;
