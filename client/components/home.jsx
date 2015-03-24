@@ -5,7 +5,7 @@ var React = require("react");
 // Router
 //var Router = require("react-router");
 console.log("a");
-console.log("B");
+console.log("Bbbbcc");
 
 // Component
 var Home = React.createClass({
@@ -31,6 +31,7 @@ var Home = React.createClass({
   }
 });
 
-React.render(<Home/>, document.getElementById('content'));
-
+$(window).load(function(){
+  React.render(<Home/>, document.getElementById('content'));
+});
 //module.exports = Home;

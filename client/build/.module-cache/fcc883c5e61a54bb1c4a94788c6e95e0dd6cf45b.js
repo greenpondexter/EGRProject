@@ -5,7 +5,8 @@ var React = require("react");
 // Router
 //var Router = require("react-router");
 console.log("a");
-console.log("B");
+console.log("Bbb");
+console.log("aa"); 
 
 // Component
 var Home = React.createClass({
@@ -21,8 +22,8 @@ var Home = React.createClass({
 
   render: function () {
     return (
-      React.createElement("div", null, 
-        React.createElement("p", null, 
+      React.createElement("div", null,
+        React.createElement("p", null,
           "home render"
         )
 

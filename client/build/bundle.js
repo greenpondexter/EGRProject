@@ -6,7 +6,7 @@ var React = require("react");
 // Router
 //var Router = require("react-router");
 console.log("a");
-console.log("B");
+console.log("Bbbbcc");
 
 // Component
 var Home = React.createClass({
@@ -22,8 +22,8 @@ var Home = React.createClass({
 
   render: function () {
     return (
-      React.createElement("div", null,
-        React.createElement("p", null,
+      React.createElement("div", null, 
+        React.createElement("p", null, 
           "home render"
         )
 
@@ -35,7 +35,6 @@ var Home = React.createClass({
 $(window).load(function(){
   React.render(React.createElement(Home, null), document.getElementById('content'));
 });
-
 //module.exports = Home;
 
 },{"react":156}],2:[function(require,module,exports){
