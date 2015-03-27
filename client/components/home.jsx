@@ -1,11 +1,8 @@
 // React
 var React = require("react");
-//var Buttons = require("./Button")
+var Slide = require("./Slider")
 
-// Router
-//var Router = require("react-router");
-console.log("a");
-console.log("Bbbbcc");
+
 
 // Component
 var Home = React.createClass({
@@ -25,8 +22,10 @@ var Home = React.createClass({
         <p>
           home render
         </p>
-
+          <div> </div>
+        <Slide/>
       </div>
+
     );
   }
 });
