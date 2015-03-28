@@ -5,7 +5,7 @@ var Slide = require("./Slider")
 
 
 // Component
-var Home = React.createClass({
+var Container = React.createClass({
   displayName: "Home",
   propTypes: {},
   mixins: [],
@@ -19,19 +19,12 @@ var Home = React.createClass({
   render: function () {
     return (
       <div>
-        <p>
-          home render
-        </p>
-          <div> </div>
-        <Slide/>
+
       </div>
 
     );
   }
 });
 
-$(window).load(function(){
-  React.render(<Home/>, document.getElementById('content'));
-});
 
-module.exports = Home;
+module.exports = Container;

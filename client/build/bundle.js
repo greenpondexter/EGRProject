@@ -38,7 +38,10 @@ componentDidMount: function () {
   var self = this;
   var a = "bs";
   var b = $(this);
-  $(this.refs.sliderHolder.getDOMNode()).slider();
+  $(this.refs.sliderHolder.getDOMNode()).slider({
+    range: true,
+    values: [10,25]
+  });
 
 },
 
