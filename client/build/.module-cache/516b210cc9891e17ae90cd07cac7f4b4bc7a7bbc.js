@@ -1,7 +1,7 @@
 // React
 var React = require("react");
 var Slide = require("./Slider")
-var EGR_Trend_Container1 = require("./EGR_Trend_Container1");
+var Container = require("./Container");
 
 
 // Component
@@ -10,16 +10,7 @@ var Home = React.createClass({
   propTypes: {},
   mixins: [],
 
-
-  getInitialState: function () {
-
-    return {
-        ContainerTitle: "Trend",
-        ContainerDescription: "Descrip",
-        d: "fuck"
-    };
-
-  },
+  getInitialState: function () { return null; },
 
   componentWillMount: function () {},
 
@@ -28,9 +19,12 @@ var Home = React.createClass({
   render: function () {
     return (
       React.createElement("div", null, 
-
-
-        React.createElement(EGR_Trend_Container1, {data: this.state.d})
+        React.createElement("p", null, 
+          "home render"
+        ), 
+          React.createElement("div", null, " "), 
+        React.createElement(Slide, null), 
+        React.createElement(Container, null)
       )
 
     );

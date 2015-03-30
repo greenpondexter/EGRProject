@@ -1,11 +1,11 @@
 // React
 var React = require("react");
-var Slide = require("./Slider")
 
-
+// Router
+//var Router = require("react-router");
 
 // Component
-var Container = React.createClass({
+var Buttons = React.createClass({
   displayName: "Home",
   propTypes: {},
   mixins: [],
@@ -18,13 +18,15 @@ var Container = React.createClass({
 
   render: function () {
     return (
-      <div>
+      React.createElement("div", null, 
+        React.createElement("p", null, 
+          "Buttons"
+        )
 
-      </div>
-
+      )
     );
   }
 });
 
 
-module.exports = Container;
+module.exports = Buttons;

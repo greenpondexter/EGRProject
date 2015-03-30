@@ -10,10 +10,7 @@ var Slider = React.createClass({
   displayName: "Home",
   propTypes: {},
   mixins: [],
-  style : {
-        color: 'white',
-        width: '590px'
-      },
+
 
   getInitialState: function () {
       return {
@@ -25,6 +22,9 @@ var Slider = React.createClass({
 
   componentDidMount: function () {
 
+    var self = this;
+    var a = "bs";
+    var b = $(this);
     $(this.refs.sliderHolder.getDOMNode()).slider({
       range: true,
       values: [10,25]
@@ -35,8 +35,8 @@ var Slider = React.createClass({
   render: function () {
 
     return (
-      <div style={this.style} ref="sliderHolder">
-      </div>
+      React.createElement("div", { ref: "sliderHolder"}
+      )
     );
   }
 });

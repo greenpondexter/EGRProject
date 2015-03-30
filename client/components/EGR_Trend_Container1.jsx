@@ -1,11 +1,13 @@
 // React
 var React = require("react");
+var ContainerHeader = require("./ContainerHeader");
+var Slider = require("./Slider")
 
-// Component
-var ContainerHeader = React.createClass({
+var EGR_Trend_Container1 = React.createClass({
   displayName: "Home",
   propTypes: {},
   mixins: [],
+
 
   getInitialState: function () { return null; },
 
@@ -15,14 +17,10 @@ var ContainerHeader = React.createClass({
 
   render: function () {
     return (
-      <div>
-        <div>
-          {this.props.ContainerTitle}
-        </div>
-        <p></p>
-        <div>
-          {this.props.ContainerDescription}
-        </div>
+      <div style={this.style}>
+        <ContainerHeader/>
+        {this.props.data}
+        <Slider/>
       </div>
 
     );
@@ -30,4 +28,4 @@ var ContainerHeader = React.createClass({
 });
 
 
-module.exports = ContainerHeader;
+module.exports = EGR_Trend_Container1;

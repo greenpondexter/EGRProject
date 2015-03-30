@@ -1,11 +1,15 @@
 // React
 var React = require("react");
+var ContainerHeader = require("./ContainerHeader");
 
-// Component
-var ContainerHeader = React.createClass({
+var Container = React.createClass({
   displayName: "Home",
   propTypes: {},
   mixins: [],
+  style : {
+        width: '680px'
+      },
+
 
   getInitialState: function () { return null; },
 
@@ -15,19 +19,13 @@ var ContainerHeader = React.createClass({
 
   render: function () {
     return (
-      <div>
-        <div>
-          {this.props.ContainerTitle}
-        </div>
-        <p></p>
-        <div>
-          {this.props.ContainerDescription}
-        </div>
-      </div>
+      React.createElement("div", {style: this.style}, 
+        React.createElement(ContainerHeader, null)
+      )
 
     );
   }
 });
 
 
-module.exports = ContainerHeader;
+module.exports = Container;

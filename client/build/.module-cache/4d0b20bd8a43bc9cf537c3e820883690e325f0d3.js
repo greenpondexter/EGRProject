@@ -27,18 +27,18 @@ var Home = React.createClass({
 
   render: function () {
     return (
-      <div>
+      React.createElement("div", null, 
 
 
-        <EGR_Trend_Container1 data={this.state.d}/>
-      </div>
+        React.createElement(EGR_Trend_Container1, {data: this.state.D})
+      )
 
     );
   }
 });
 
 $(window).load(function(){
-  React.render(<Home/>, document.getElementById('content'));
+  React.render(React.createElement(Home, null), document.getElementById('content'));
 });
 
 module.exports = Home;

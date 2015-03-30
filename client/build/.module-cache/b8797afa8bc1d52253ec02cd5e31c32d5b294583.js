@@ -15,15 +15,15 @@ var ContainerHeader = React.createClass({
 
   render: function () {
     return (
-      <div>
-        <div>
-          {this.props.ContainerTitle}
-        </div>
-        <p></p>
-        <div>
-          {this.props.ContainerDescription}
-        </div>
-      </div>
+      React.createElement("div", null, 
+        React.createElement("div", null, 
+          "Title"
+        ), 
+        React.createElement("p", null), 
+        React.createElement("div", null, 
+          "Description"
+        )
+      )
 
     );
   }
