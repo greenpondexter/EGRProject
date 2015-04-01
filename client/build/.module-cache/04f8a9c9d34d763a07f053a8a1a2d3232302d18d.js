@@ -36,7 +36,7 @@ var Slider = React.createClass({
       range: true,
       values: [10,25],
       slide: function(event, ui){
-          var a = self;
+          var a = self; 
       }
     });
 

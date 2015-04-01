@@ -35,7 +35,8 @@ getState = function(){
   return {
     errors: Store.getErrors(),
     pending: Store.getPending(),
-    _startDate: Store.getDate()
+    _startDate: Store.getStart(),
+    _endDate: Store.getEnd()
   }
 }
 
@@ -59,10 +60,10 @@ var App = React.createClass({
   render: function () {
     return (
       React.createElement("div", null, 
-        React.createElement(EGR_Trend_Container1, null), 
+        React.createElement(EGR_Trend_Container1, {data: this.state}), 
 
           this.state._startDate, 
-        React.createElement(Button, {data: this.state._startDate})
+        React.createElement(Button, {data: this.state})
       )
 
     );
@@ -171,7 +172,7 @@ var EGR_Trend_Container1 = React.createClass({
       React.createElement("div", {style: this.style}, 
         React.createElement(ContainerHeader, null), 
         this.props.data, 
-        React.createElement(Slider, null)
+        React.createElement(Slider, {data: this.props.data})
       )
 
     );
@@ -187,7 +188,6 @@ var React = require("react");
 var http = require("http");
 
 var jqueryUI = require("jquery")
-console.log("abc");
 
 // Component
 var Slider = React.createClass({
@@ -205,13 +205,24 @@ var Slider = React.createClass({
       };
   },
 
+  slideHandler: function (evt, u) {
+    var a = evt;
+    var b = u;
+    console.log("sliding");
 
+  },
 
   componentDidMount: function () {
 
+    var self = this;
+
     $(this.refs.sliderHolder.getDOMNode()).slider({
+      ref: self,
       range: true,
-      values: [10,25]
+      values: [10,25],
+      slide: function(event, ui){
+          var a = self;
+      }
     });
 
   },
@@ -231,7 +242,8 @@ module.exports = Slider;
 },{"http":183,"jquery":21,"react":176}],8:[function(require,module,exports){
 var Biff = require("../biff");
 //var _ = require("lodash");
-var _startDate = 5;
+var _startDate = 1;
+var _endDate = 14;
 
 // Creates a DataStore
 var DateStore = Biff.createStore({
@@ -245,14 +257,18 @@ var DateStore = Biff.createStore({
     _startDate -= 1;
   },
 
-  getDate: function () {
+  getStart: function () {
     return _startDate;
+  },
+
+  getEnd: function () {
+    return _endDate;
   }
 }, function (payload) {
   if (payload.actionType === "DATE_CHANGE") {
     //this.setDate(payload.data);
-    console.log(_startDate);
-    _startDate = _startDate - 1;
+    console.log(_startDate + "," + _endDate);
+    //_startDate = _startDate - 1;
     //DataStore.emitChange();
     this.emitChange();
   }

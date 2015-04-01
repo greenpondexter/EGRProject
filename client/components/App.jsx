@@ -9,7 +9,8 @@ getState = function(){
   return {
     errors: Store.getErrors(),
     pending: Store.getPending(),
-    _startDate: Store.getDate()
+    _startDate: Store.getStart(),
+    _endDate: Store.getEnd()
   }
 }
 
@@ -33,10 +34,10 @@ var App = React.createClass({
   render: function () {
     return (
       <div>
-        <EGR_Trend_Container1 />
+        <EGR_Trend_Container1 data={this.state}/>
 
           {this.state._startDate}
-        <Button data={this.state._startDate}/>
+        <Button data={this.state}/>
       </div>
 
     );

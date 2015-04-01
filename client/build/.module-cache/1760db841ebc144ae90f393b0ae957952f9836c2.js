@@ -32,11 +32,10 @@ var Slider = React.createClass({
     var self = this;
 
     $(this.refs.sliderHolder.getDOMNode()).slider({
-      ref: self,
       range: true,
       values: [10,25],
       slide: function(event, ui){
-          var a = self;
+        self.sliderHandler(event, ui); 
       }
     });
 

@@ -20,7 +20,7 @@ var EGR_Trend_Container1 = React.createClass({
       <div style={this.style}>
         <ContainerHeader/>
         {this.props.data}
-        <Slider/>
+        <Slider data = {this.props.data}/>
       </div>
 
     );

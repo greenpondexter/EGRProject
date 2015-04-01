@@ -20,9 +20,7 @@ var Slider = React.createClass({
       };
   },
 
-  slideHandler: function (evt, u) {
-    var a = evt;
-    var b = u;
+  slideHandler: function (event, ui) {
     console.log("sliding");
 
   },
@@ -32,11 +30,10 @@ var Slider = React.createClass({
     var self = this;
 
     $(this.refs.sliderHolder.getDOMNode()).slider({
-      ref: self,
       range: true,
       values: [10,25],
       slide: function(event, ui){
-          var a = self;
+        console.log("sliding");
       }
     });
 
