@@ -12,7 +12,8 @@ var Button = React.createClass({
 
   clickHandler: function() {
       EGR_Actions.dateChange({
-        _startDate: 1
+        _startDate: 1,
+        _endDate: 1
       });
   },
 
@@ -24,10 +25,10 @@ var Button = React.createClass({
 
   render: function () {
     return (
-      <div>
-        <button type="button" onClick={this.clickHandler}>Apply</button>
-        <div>{this.props.data}</div>
-      </div>
+      React.createElement("div", null, 
+        React.createElement("button", {type: "button", onClick: this.clickHandler}, "Apply"), 
+        React.createElement("div", null, this.props.data._startDate)
+      )
     );
   }
 });

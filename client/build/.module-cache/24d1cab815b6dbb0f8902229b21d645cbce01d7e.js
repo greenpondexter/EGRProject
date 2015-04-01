@@ -2,10 +2,18 @@
 var React = require("react");
 var Slide = require("./Slider")
 var EGR_Trend_Container1 = require("./EGR_Trend_Container1");
+var Button = require("./Button");
+var Store = require("../stores/DateStore")
+
+getState = function(){
+  return Store.getDate();
+
+
+}
 
 
 // Component
-var Home = React.createClass({
+var App = React.createClass({
   displayName: "Home",
   propTypes: {},
   mixins: [],
@@ -13,11 +21,7 @@ var Home = React.createClass({
 
   getInitialState: function () {
 
-    return {
-        ContainerTitle: "Trend",
-        ContainerDescription: "Descrip",
-        d: "fuck"
-    };
+    return getState();
 
   },
 
@@ -28,9 +32,8 @@ var Home = React.createClass({
   render: function () {
     return (
       React.createElement("div", null, 
-
-
-        React.createElement(EGR_Trend_Container1, {data: this.state.d})
+        React.createElement(EGR_Trend_Container1, null), 
+        React.createElement(Button, {data: this.props.data})
       )
 
     );
@@ -38,7 +41,7 @@ var Home = React.createClass({
 });
 
 $(window).load(function(){
-  React.render(React.createElement(Home, null), document.getElementById('content'));
+  React.render(React.createElement(App, {data: this.state._startDate}), document.getElementById('content'));
 });
 
-module.exports = Home;
+module.exports = App;
