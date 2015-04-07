@@ -14,6 +14,10 @@ var Button = React.createClass({
       EGR_Actions.dateChange({
         _startDate: 1
       });
+
+      EGR_Actions.textBoxChange({
+        _newText: "aa"
+      })
   },
 
   getInitialState: function () { return null; },
@@ -24,9 +28,9 @@ var Button = React.createClass({
 
   render: function () {
     return (
-      <div>
-        <button type="button" onClick={this.clickHandler}>Apply</button>
-        <div>{this.props.data}</div>
+      <div className = "MIEGRapplyButtonHolder">
+        <button type="button" className = "MIEGRready" onClick={this.clickHandler}>Apply Filter</button>
+        <div></div>
       </div>
     );
   }

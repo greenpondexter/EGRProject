@@ -1,0 +1,74 @@
+.MIDashboardMasterContainer {
+    width: 680px;
+    margin-left: auto;
+    margin-right: auto; 
+
+}
+
+.MIEGRapplyButtonHolder{
+  margin-left: 65px;
+}
+
+.MIEGRContainer {
+    width: 680px;
+    margin-left: auto;
+    margin-right: auto; 
+
+}
+
+.MIEGRContainerTitle {
+    font-family: Arial; 
+    font-weight: bold; 
+    font-size: 20px; 
+    padding-bottom: 15px; 
+}
+
+.MIEGRPeriodTextBoxTitle{
+	font-family: Arial; 
+    font-weight: bold; 
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+#MIEGRfirstPeriodTextBox, #MIEGRsecondPeriodTextBox {
+    background-Color: #f9f9f9; 
+    width: 300px; 
+    border:0; 
+    color:#969696; 
+    font-weight:bold;
+}
+
+.MIEGRsliderHolder {
+	width: 590px;
+	margin-left: auto;
+    margin-right: auto; 	
+    margin-top: 5px; 
+	height: 110px; 
+   
+
+
+}
+
+.MIEGRnotReady{
+	border: 1px solid #858585;
+    color: #5C5C5C;
+    opacity: .3;
+    
+}
+
+.MIEGRready{
+
+  color: #A30000; 
+  background: #fdeeb3;
+  font-weight: bold;
+  border: 1px solid #ff9d00;
+  opacity: 1; 
+  
+}
+
+.MIEGRDashboardContainer {
+    width: 680px;
+    margin-left: auto;
+    margin-right: auto; 
+
+}

@@ -2,7 +2,8 @@
 var React = require("react");
 var http = require("http");
 
-var jqueryUI = require("jquery")
+var jqueryUI = require("jquery");
+var EGR_Actions = require("../actions/EGR_Actions");
 
 // Component
 var Slider = React.createClass({
@@ -21,9 +22,27 @@ var Slider = React.createClass({
   },
 
   slideHandler: function (evt, u) {
-    var a = evt;
-    var b = u;
-    console.log("sliding");
+    
+    var self = this;
+
+    if (u.value === u.values[0]){
+       var dateStart = $(this.refs.sliderHolder.getDOMNode()).slider("values", 0);
+       var dateEnd = $(this.refs.sliderHolder.getDOMNode()).slider("values", 1);
+       EGR_Actions.SliderDateChange({
+        _startDate: dateStart,
+        _endDate: dateEnd,
+        whichSlider: this.props.whichSlider
+      });
+    }
+    else{
+       var dateStart = $(this.refs.sliderHolder.getDOMNode()).slider("values", 0);
+       var dateEnd = $(this.refs.sliderHolder.getDOMNode()).slider("values", 1);
+       EGR_Actions.SliderDateChange({
+        _startDate: dateStart,
+        _endDate: dateEnd,
+        whichSlider: this.props.whichSlider
+      });
+    }
 
   },
 
@@ -35,8 +54,13 @@ var Slider = React.createClass({
       ref: self,
       range: true,
       values: [10,25],
+      min: 0,
+      max: 23,
+      stop: function(event, ui){
+          self.slideHandler(event, ui);
+      },
       slide: function(event, ui){
-          var a = self;
+        console.log("."); 
       }
     });
 
@@ -45,8 +69,7 @@ var Slider = React.createClass({
   render: function () {
 
     return (
-      <div style={this.style} ref="sliderHolder">
-      </div>
+      <div style={this.style} ref="sliderHolder"></div>
     );
   }
 });

@@ -1,16 +1,24 @@
-// React
+// Reacts
 var React = require("react");
 var Slide = require("./Slider")
-var EGR_Trend_Container1 = require("./EGR_Trend_Container1");
+var MIEGRTrendContainer1 = require("./MIEGRTrendContainer1");
+var MIEGRTrendContainer2 = require("./MIEGRTrendContainer2")
 var Button = require("./Button");
 var Store = require("../stores/DateStore");
+var Components = require("../stores/EGRComponentsStore")
 
 getState = function(){
   return {
     errors: Store.getErrors(),
     pending: Store.getPending(),
-    _startDate: Store.getStart(),
-    _endDate: Store.getEnd()
+    startDate1: Store.getStart(1),
+    endDate1: Store.getEnd(1),
+    startDate2: Store.getStart(2),
+    endDate2: Store.getEnd(2),
+    months: Store.getMonths(), 
+    textBox1: Components.getTextBoxText(1),
+    textBox2: Components.getTextBoxText(2),
+    headerData: Store.getHeaderData()
   }
 }
 
@@ -33,11 +41,10 @@ var App = React.createClass({
 
   render: function () {
     return (
-      <div>
-        <EGR_Trend_Container1 data={this.state}/>
-
-          {this.state._startDate}
+      <div className = "MIEGRMasterContainer">
+        <MIEGRTrendContainer1 data={this.state}/>
         <Button data={this.state}/>
+        <MIEGRTrendContainer2 data={this.state}/>
       </div>
 
     );

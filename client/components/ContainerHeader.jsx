@@ -16,12 +16,12 @@ var ContainerHeader = React.createClass({
   render: function () {
     return (
       <div>
-        <div>
-          {this.props.ContainerTitle}
+        <div className = "MIEGRContainerTitle">
+          {this.props.headerData.ContainerTitle}
         </div>
         <p></p>
-        <div>
-          {this.props.ContainerDescription}
+        <div className = "MIEGRContainerDescription">
+          {this.props.headerData.ContainerDescription}
         </div>
       </div>
 
